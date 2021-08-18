@@ -128,7 +128,7 @@ int main()
 }
 ```
 
-### When do we use references/const references?
+### When do we use references / const references?
 - If we are working with a variable that takes up little space in memory (e.g. int, double), we don't need to use a reference and can just copy the variable.
 - If we need to **alias** the variable to modify it, we can use references.
 - If we don't need to modify the variable, but it's a big variable (e.g. std::vector), we can use const references.
