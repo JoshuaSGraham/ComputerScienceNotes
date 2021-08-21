@@ -39,7 +39,7 @@ std::cin >> x > y > z;          // x = 5, y = "xyz", z = 7
 std::ifstream in("out.txt", std::ifstream::in);
 in >> x >> y >> z;              // out.txt contains 5
 ```
-#### Why does this work?
+### Why does this work?
 
 ![image1]
 
@@ -67,10 +67,62 @@ Reading using >> extracts a single "word" including for strings. To read a whole
 - Don't mix the two or bad things will happen.
 
 
-## Stringstreams
+## Stream Internals
+* Buffering
+* State Bits
+* Chaining (a.k.a why << << << works)
 
+## Buffering
 
+Writing to console / file is *slow*. If we had to write each character separately, slow runtime.
 
+So we accumulate characters in a temporary **buffer**.
 
+```cpp
+input << "Hel";
+input << "lo ";
+input << "world";
+```
 
+h | e | l | l | o | _ | w | o | r | l | d
 
+When full, we write the **entire buffer** to output. You can empty the buffer early by *flushing*
+
+```cpp
+stream << std::flush; // flush what we have so far
+stram << std::endl;   // flush with newline
+
+// this is equivalent to: stream << "\n" << std::flush;
+```
+
+### Buffer Takeaways
+- The internal sequence of data stored in a stream is called a buffer.
+- Istreams use buffers to store data we haven't used yet.
+- Ostreams use buffers to store data that hasn't been outputted yet.
+
+## State Bits
+Streams have four **state bits**
+
+- **Good bit:** whether ready for read/write
+- **Fail bit:** previous operation failed, future operations frozen
+- **EOF bit:** previous operation reach end of file
+- **Bad bit:** external integrity error
+
+### Using State Bits
+```cpp
+// Here's a very common read loop:
+
+while (true) 
+{
+  stream >> temp;             // read data
+  if (!stream) break;         // checks for fail bit OR bad bit
+  doSomething(temp);
+}
+
+// Can be simplified to this:
+
+while (stream >> temp)
+{
+  doSomething(temp);
+}
+```
