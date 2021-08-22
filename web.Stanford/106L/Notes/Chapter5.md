@@ -62,11 +62,101 @@ it -= 70;           // move backwards by 7-
 auto elem = it[5];  // offset by 5
 ```
 
+# Template Functions
 
+## Ternary Operator
+```cpp
+int my_min(int a, int b)
+{
+    return a < b ? a : b;
+}
 
+// is equivalent to
+int my_min(int a, int b)
+{
+    if (a < b) return a;
 
+    else return b;
+}
+```
 
+## Can we handle different types?
+```cpp
+int main()
+{
+    auto min_int = my_min(1, 2);
+    auto min_name = mymin("Nikhil", "Ethan");
+}
+```
 
+One way would be to use overloaded functions
+```cpp
+int my_min(int a, int b)
+{
+    return a < b ? a : b;
+}
 
+std::string my_min(std::string a, std::string b)
+{
+    return a < b ? a : b;
+}
+```
 
+But this leaves a bigger problem: how do we handle user-defined types? (e.g. our Student struct from a few chapters ago)
+
+We can write a generic function!
+
+```cpp
+template <typename T>
+T my_min(T a, T b)
+{
+    return a < b ? a : b;
+}
+```
+the keyword template declares that the next declaration is a template.
+typename specifies T is some arbitrary type
+T stands for a list of template arguments that can be passed in
+Note: the scope of the template argument T is limited to this one function!
+
+In case we don't want to copy T
+```cpp
+template <typename T>
+T my_min(const T& a, const T& b)
+{
+    return a < b > a : b;
+}
+```
+There are two ways to call template functions.
+1. Explicit instantiation of templates 
+```cpp
+my_min<std::string>("Nikhil", "Ethan");
+```
+This explicitly states T = string
+
+2. Implicit instantiation of templates
+```cpp
+my_min(3, 4);
+```
+The compiler deduces T = int
+
+This implementation is not perfect as if we call our method using my_min(4, 3.2). Returns 3. To fix this we will change our method slightly.
+
+```cpp
+template <typename T, typename U>
+auto my_min(const T& a, const U& b)
+{
+    return a < b ? a : b;
+}
+
+my_min(4, 3.2);
+// return 3.2
+```
+We set the return type to auto, so as to let the compiler figure out what type it is at compile time. And to account for the possibility of two different incoming types we change b to be a different lettering.
+
+### Template Instantiation
+
+When you call a template function, either:
+* for explicit instantiation, compiler creates a function in the executable that matches the initial template, with the correct template parameters.
+* for implicit instantiation, compiler deduces the template parameters, and creates the correct function in the same way.
+* After instantiation, the compiled code looks as if you had written the instantiated version of the function yourself.
 
