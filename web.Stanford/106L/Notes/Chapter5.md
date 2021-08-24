@@ -160,3 +160,86 @@ When you call a template function, either:
 * for implicit instantiation, compiler deduces the template parameters, and creates the correct function in the same way.
 * After instantiation, the compiled code looks as if you had written the instantiated version of the function yourself.
 
+# Concept lifting
+
+What assumptions are we making about the parameters?
+
+Can we solve a more general problem by relaxing some of the constraints?
+
+## Why write generic functions?
+
+- Count the # of times **3** appears in a std::vector<int>
+- Count the # of times **"X"** appears in a std::istream
+- Count the # of times **a vowel** appears in the second half of a std::string
+  
+By writing generic functions, we can solve all of these problems with a single function!
+
+We do this by removing as many assumptions as we can.
+
+```cpp
+int count_occurrences(const vector<int>& vec, int val)
+{
+    int count = 0;
+    for (size_t i = 0; i < vec.size(); i++>)
+    {
+        if (vec[i] == val)
+        {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+vector<int> v; count_occurrences(v, 5);
+```
+What assumptions are we making here?
+What if we want to generalize this beyond ints?
+
+How many times does a <T> appear in a vector<t>?
+```cpp
+
+template <typename DataType>
+int count_occurrences(const vector<DataType>& vec, DataType val)
+{
+    int count = 0;
+    for (size_t i = 0; i < vec.size(); i++)
+    {
+        if (vec[i] == val)
+        {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+vector<string> v; vount_occurrences(v, "test");
+```
+This is much better! But what if we want to generalize this beyond a vector?
+
+```cpp
+template <typename InputIt, typename DataType>
+int count_occurrences(INputIt begin, InputIt end, DataType value)
+{
+    int count = 0;
+    for (auto iter = begin; iter != end; ++iter)
+    {
+        if (*iter == value)
+        {
+            count++
+        }
+    }
+
+    return count;
+}
+
+vector<string> v; count_occurrences(v.begin(), v.end(), "test");
+```
+
+### We can now solve these questions...
+* Count the number of times **3** appears in a list<int>
+* Count the number of times **'X'** appears in a std::deque<char>
+* Count the number of times **'Y'** appears in a string
+* Count the number of time **5** appears in the second half of a vector<int>
+
