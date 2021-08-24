@@ -243,3 +243,78 @@ vector<string> v; count_occurrences(v.begin(), v.end(), "test");
 * Count the number of times **'Y'** appears in a string
 * Count the number of time **5** appears in the second half of a vector<int>
 
+## Predicates
+
+### Unary Predicates
+```cpp
+bool isEqualTo3(int a)
+{
+    return (a == 3);
+}
+
+bool isVowel(char c)
+{
+    return std::find("aeiou", c) != -1;
+}
+```
+
+### Binary Predicates
+```cpp
+bool isDivisibleBy(int a, int b)
+{
+    return (a % b == 0)
+}
+
+bool isLessThan(int a, int b)
+{
+    return (a < b);
+}
+```
+
+### Calling this function with a predicate
+```cpp
+template <typename InputIt, typename DataType, typename UniPredicate>
+int count_occurrences(InputIt begin, InputIt end, UniPredicate predicate)
+{
+    int count = 0;
+    for (auto iter = begin; iter != end; ++iter)
+    {
+        if (pred(*iter) == val)
+        {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+
+bool is_even(int i)
+{
+    return (i % 2) == 0;
+}
+vector<int> v; count_occurences(v.begin(), v.end(), is_even);
+// this is a function pointer
+```
+
+Function pointers generalize poorly
+```cpp
+bool is_greater_than_5(int i)
+{
+    return (i > 5);
+}
+
+bool is_greater_than_6(int i)
+{
+    return (i > 6);
+}
+
+bool is_greater_than_7(int i)
+{
+    return (i > 7);
+}
+
+// We can't add the limit as a parameter to the function (Why?)
+```
+
+This is fundamentally a **scope** problem. We need to pass the *limit* in without adding another parameter...
