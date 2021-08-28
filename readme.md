@@ -2,7 +2,8 @@ This repo is a collection of notes made by me, from a wide collection of resourc
 
 | Programming Concepts    |      Folder Location      |
 |:----------:|:-------------:|
-| Intro to Cpp |  /web.Stanford/106L |
+| C++ Programming Abstractions | /web.Stanford/106B |
+| Standard C++ Programming |  /web.Stanford/106L |
 
 
 | DataStructures & Algorithms    |      Folder Location      |
