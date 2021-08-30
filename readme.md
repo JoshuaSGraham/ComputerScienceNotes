@@ -2,7 +2,7 @@ This repo is a collection of notes made by me, from a wide collection of resourc
 
 | Programming Concepts    |      Folder Location      |
 |:----------:|:-------------:|
-| C++ Programming Abstractions | /web.Stanford/106B |
+| Programming Abstractions | /web.Stanford/106B |
 | Standard C++ Programming |  /web.Stanford/106L |
 
 
