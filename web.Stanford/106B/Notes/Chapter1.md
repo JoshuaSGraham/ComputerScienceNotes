@@ -36,5 +36,39 @@ There are three categories of functions
 string("text"); converts the C string literal into a C++ string
 string.c_str() returns a C string from a C++ string
 
+# Console Programs
+
+## How do we build programs that interact with users?
+**Console Program:** A program that uses the interactive terminal (console) as a communication boundary with the user. 
+
+### The console and the getLine() function
+- The console is the text-output area that we have already seen when using cout to display information. In addition to displaying text, the console can also solicit text form a user
+- The getLine() function takes in a single parameter, which is a prompt to show to the user.
+- The function will then wait while the user types in text into the console.
+- After the user submits their answer by hitting the "Enter/Return" key, the function returns the value that the user types into the console.
+
+## Summary
+* use getLine(prompt) to read in information from the user.
+* Use a while loop to enable multiple runs of your program.
+  * While(true) paired with a break is a powerful construct but also dangerous!
+* Console programs must be run directly from main()
+
+# How do we structure data using abstractions in code?
+
+## Abstract Data Types
+
+- Data structures, or **abstract data types (ADTs)**, are powerful abstractions that allow programmer to store data in structured, organized ways.
+- These ADTs give us certain guarantees about the organization and properties of our data, whithout our having to worry about managing the underlying details.
+
+
+
+
+
+
+
+
+
+
+
 
 
