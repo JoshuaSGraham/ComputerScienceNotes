@@ -58,16 +58,55 @@ string.c_str() returns a C string from a C++ string
 ## Abstract Data Types
 
 - Data structures, or **abstract data types (ADTs)**, are powerful abstractions that allow programmer to store data in structured, organized ways.
-- These ADTs give us certain guarantees about the organization and properties of our data, whithout our having to worry about managing the underlying details.
+- These ADTs give us certain guarantees about the organization and properties of our data, without our having to worry about managing the underlying details.
 
+# Vectors
 
+- At a high level, a vector is an ordered collection of elements of the same type that can grow and shrink in size.
+  - Each element in the collection has a specific location, or index
+  - All elements in a vector must be of the same type. Unlike in other programming languages, a single vector cannot contain elements of mixed types.
+  - Vectors are flexible when it comes to the number of elements they can store. You can easily add and remove elements from a vector. Vectors also know their size, meaning you can query them to see how many elements they currently contain.
+- Analogs in other languages: list in Python and ArrayList in Java
 
+![image3]
 
+[image3]: https://i.imgur.com/BM5tbPR.png
 
+## Vector Example
 
+Consider the following task: Given a Vector of integers, write a function that eliminates negativity from the vector by changing the sign of all negative values to turn them into their positive equivalents
 
+```cpp
+void eliminateNegativity(Vector<int> v)
+{
+  for (int i = 0; i < v.size(); i++)
+  {
+      if (v[i] < 0)
+      {
+          v[i] = -1 * v[i];
+      }
+  }
+}
 
+int main()
+{
+  Vector<int> nums = {1, -4, 18, -11};
+  eliminateNegativity(nums);
+  cout << nums << endl;
+}
+```
 
+Result: The vector is passed by value, so a copy is modified, and no changes persist.
+
+So how do we allow functions to modify vectors?
+
+# Pass by Reference
+(i.e. How do we efficiently and effectively handle data structures in functions?)
+
+### Definition
+Pass by value: When a parameter is passed into a function, the new variable stores a copy of the passed in value in memory.
+
+Pass by reference: When a parameter is passed into a function, the new variable stores a reference to the passed in value, which allows you to directly edit the original value.
 
 
 
