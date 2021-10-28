@@ -1,5 +1,8 @@
 # Streams
 
+^759bee
+
+
 A stream is an *abstraction* for input/output. Streams can take different types of input.
 Any primitive type can be inserted; for other types, you need to explicitly tell c++ how to do this.
 

@@ -4,9 +4,9 @@
 
 * Strings are mutable in C++
 * You can add characters to strings and strings to strings using += and +
-  * Strings must use double quotes ("") while characters use sing ('').
+ * Strings must use double quotes ("") while characters use sing ('').
 * You can use logical operators to compare strings
-  * Under-the-hood, C++ is using the ASCII values of their first characters to compare.
+ * Under-the-hood, C++ is using the ASCII values of their first characters to compare.
 
 
 ## String Utility functions
@@ -108,6 +108,28 @@ Pass by value: When a parameter is passed into a function, the new variable stor
 
 Pass by reference: When a parameter is passed into a function, the new variable stores a reference to the passed in value, which allows you to directly edit the original value.
 
+## What exactly is a reference?
 
+We will think of a variable as a named container storing a value. E.g. double weight = 1.06
+We will think of a reference as a box that just refers to an existing variable.
+Said references have names and types, just like regular variables. E.g. double& weight_ref
+The type has an ampersand after it to indicate it's a reference to that data type rather than the type itself
+
+Code example:
+
+```cpp
+void tripleWeight(double& weight_ref)
+{
+  weight_ref *= 3; // triple the weight
+}
+
+int main()
+{
+  double weight = 1.06;
+  tripleWeight(weight);
+  cout<< wight << endl; // prints 3.18
+}
+
+```
 
 
