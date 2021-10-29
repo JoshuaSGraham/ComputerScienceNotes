@@ -1,4 +1,6 @@
 #ArraysVSLinkedLists
+#Arrays 
+#LinkedLists 
 # Arrays Vs. Linked Lists
 ## Run Times
 
@@ -23,3 +25,5 @@ Whereas arrays every object after the insert would have to be moved down.
 What if you want to delete an element? Again, lists are better, because you just need to change what the previous element points. With arrays, everything needs to be moved up when you delete an element.
 
 Unlike insertions, deletions will always work. Insertions can fail sometimes when there's no space left in memory. But you can always delete an element.
+
+Its worth mentioning that **insertions** and **deletions** are O(1) time **only** if you can instantly access the element to be deleted. It's a common practice to keep track of the first and last items in a linked list, so it would take only O(1) time to delete those.

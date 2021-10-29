@@ -9,19 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "ComparingArrays&LinkedLists.md",
+            "file": "Algorithms/SelectionSort/grokking/SelectionSort.md",
             "mode": "source"
-          }
-        }
-      },
-      {
-        "id": "eb51c3c10ac6ee0f",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "ComparingArrays&LinkedLists.md",
-            "mode": "preview"
           }
         }
       }
@@ -63,7 +52,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 108
+    "width": 313
   },
   "right": {
     "id": "052a09b3a5d061dc",
@@ -79,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ComparingArrays&LinkedLists.md",
+                "file": "Algorithms/SelectionSort/grokking/SelectionSort.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,14 +88,15 @@
   },
   "active": "c8b854dfc8688726",
   "lastOpenFiles": [
-    "ComparingArrays&LinkedLists.md",
-    "ProgrammingConcepts/web.Stanford/106B/Notes/Chapter1.md",
-    "DataStructsAndAlgorithms/LinkedLists.md",
-    "DataStructsAndAlgorithms/Arrays.md",
-    "DataStructsAndAlgorithms/SelectionSort/grokking/Notes.md",
+    "Algorithms/SelectionSort/grokking/SelectionSort.md",
+    "ProgrammingConcepts/web.Stanford/106L/Notes/Chapter1.md",
+    "readme.md",
     "ProgrammingConcepts/web.Stanford/106L/Notes/Chapter4.md",
     "ProgrammingConcepts/web.Stanford/106L/Notes/Chapter3.md",
+    "ProgrammingConcepts/web.Stanford/106L/Notes/Chapter2.md",
     "ProgrammingConcepts/web.Stanford/106L/Notes/Chapter5.md",
-    "readme.md"
+    "DataStructures/Arrays.md",
+    "ProgrammingConcepts/web.Stanford/106B/Notes/Chapter1.md",
+    "DataStructures/ComparingArrays&LinkedLists.md"
   ]
 }

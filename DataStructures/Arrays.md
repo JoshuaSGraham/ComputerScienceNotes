@@ -10,3 +10,5 @@ An easy fix to this is to just reserve memory in advance. Say 10 spaces so that 
 This does have downsides however:
 * You may not need the extra slots that you have reserved, and then thta memory will be wasted. You might not be using it, but no one else can use it either.
 * You may add more than 10 items to the array and have to move it anyway.
+
+[[ComparingArrays&LinkedLists]]

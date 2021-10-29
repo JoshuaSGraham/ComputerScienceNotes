@@ -1,5 +1,0 @@
-#SelectionSort
-
-# Selection Sort
-
-[[Arrays]]
