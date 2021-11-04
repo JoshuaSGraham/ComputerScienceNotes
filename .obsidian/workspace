@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Algorithms/SelectionSort/grokking/SelectionSort.md",
+            "file": "Divide&Conquer.md",
             "mode": "source"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithms/SelectionSort/grokking/SelectionSort.md",
+                "file": "Divide&Conquer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,15 +88,15 @@
   },
   "active": "c8b854dfc8688726",
   "lastOpenFiles": [
+    "Divide&Conquer.md",
+    "DataStructures/ComparingArrays&LinkedLists.md",
+    "DataStructures/Arrays.md",
+    "Pasted image 20211104191623.png",
+    "DataStructures/LinkedLists.md",
     "Algorithms/SelectionSort/grokking/SelectionSort.md",
+    "Algorithms/QuickSort/grokking/QuickSort.md",
     "ProgrammingConcepts/web.Stanford/106L/Notes/Chapter1.md",
     "readme.md",
-    "ProgrammingConcepts/web.Stanford/106L/Notes/Chapter4.md",
-    "ProgrammingConcepts/web.Stanford/106L/Notes/Chapter3.md",
-    "ProgrammingConcepts/web.Stanford/106L/Notes/Chapter2.md",
-    "ProgrammingConcepts/web.Stanford/106L/Notes/Chapter5.md",
-    "DataStructures/Arrays.md",
-    "ProgrammingConcepts/web.Stanford/106B/Notes/Chapter1.md",
-    "DataStructures/ComparingArrays&LinkedLists.md"
+    "ProgrammingConcepts/web.Stanford/106L/Notes/Chapter4.md"
   ]
 }
